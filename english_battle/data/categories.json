@@ -1,0 +1,66 @@
+[
+  {
+    "id": "word_meaning",
+    "name_ar": "معاني الكلمات",
+    "name_en": "Word Meaning",
+    "icon": "fa-book-open",
+    "color": "#3A86FF",
+    "description": "اختيار معنى الكلمة الإنجليزية باللغة العربية أو الإنجليزية"
+  },
+  {
+    "id": "sentence_meaning",
+    "name_ar": "معاني الجمل والتعابير",
+    "name_en": "Sentence Meaning",
+    "icon": "fa-comment-dots",
+    "color": "#8338EC",
+    "description": "فهم معنى الجملة الإنجليزية أو التعبير الشائع واختيار الترجمة الصحيحة"
+  },
+  {
+    "id": "grammar",
+    "name_ar": "تحدي القواعد",
+    "name_en": "Grammar Challenge",
+    "icon": "fa-spell-check",
+    "color": "#FF006E",
+    "description": "اختيار التركيب والقاعدة النحوية الصحيحة للجملة"
+  },
+  {
+    "id": "fill_blank",
+    "name_ar": "إكمال الفراغ",
+    "name_en": "Fill in the Blank",
+    "icon": "fa-pen-to-square",
+    "color": "#FB5607",
+    "description": "إكمال الفراغ بالكلمة الأنسب سياقًا وقواعديًا"
+  },
+  {
+    "id": "word_scramble",
+    "name_ar": "ترتيب الحروف",
+    "name_en": "Word Scramble",
+    "icon": "fa-cubes",
+    "color": "#FFBE0B",
+    "description": "إعادة ترتيب الحروف المبعثرة لتكوين كلمة إنجليزية صحيحة"
+  },
+  {
+    "id": "sentence_builder",
+    "name_ar": "بناء الجملة",
+    "name_en": "Sentence Builder",
+    "icon": "fa-puzzle-piece",
+    "color": "#06D6A0",
+    "description": "ترتيب الكلمات المبعثرة لبناء جملة إنجليزية ذات معنى سليم"
+  },
+  {
+    "id": "true_false",
+    "name_ar": "صح أم خطأ",
+    "name_en": "True or False",
+    "icon": "fa-check-double",
+    "color": "#118AB2",
+    "description": "تحديد ما إذا كانت الجملة أو المعلومة صحيحة أم خاطئة لغويًا"
+  },
+  {
+    "id": "guess_word",
+    "name_ar": "خمن الكلمة",
+    "name_en": "Guess the Word",
+    "icon": "fa-magnifying-glass",
+    "color": "#073B4C",
+    "description": "اكتشاف الكلمة المستهدفة من خلال 3 تلميحات ذكية متدرجة"
+  }
+]
