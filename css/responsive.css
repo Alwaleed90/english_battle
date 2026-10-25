@@ -1,0 +1,30 @@
+
+@media (min-width: 1400px) {
+    html { font-size: 18px; }
+    .main-container, .game-layout { max-width: 1480px; }
+    .question-text { font-size: 2.5rem; }
+    .option-btn { font-size: 1.45rem; padding: 1.6rem 2rem; }
+    .letter-block { width: 68px; height: 74px; font-size: 2rem; }
+    .word-chip { font-size: 1.45rem; padding: 0.9rem 1.8rem; }
+    .masked-word-display { font-size: 3.4rem; letter-spacing: 16px; }
+}
+
+@media (max-width: 1024px) {
+    .options-grid { grid-template-columns: 1fr; }
+    .question-text { font-size: 1.8rem; }
+    .podium-grid { flex-direction: column; align-items: center; }
+    .podium-place { width: 100%; max-width: 400px; order: initial !important; transform: none !important; }
+}
+
+@media (max-width: 768px) {
+    html { font-size: 15px; }
+    .top-nav { padding: 0.75rem 1rem; }
+    .hero-title { font-size: 2.3rem; }
+    .question-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .timer-container { align-self: center; }
+    .question-text { font-size: 1.5rem; }
+    .tf-grid { grid-template-columns: 1fr; }
+    .scoreboard-bar { grid-template-columns: 1fr 1fr; top: 60px; }
+    .toolbar-row { flex-direction: column; align-items: stretch; }
+    .team-selector-chips, .toolbar-actions { justify-content: center; }
+}

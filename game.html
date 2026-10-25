@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ساحة اللعب | English Battle</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="game-body">
+    <header class="top-nav">
+        <div class="nav-brand">
+            <div class="brand-icon">🎮</div>
+            <div>
+                <span class="brand-title font-en">ENGLISH BATTLE</span>
+                <span class="brand-badge" id="match-stage-badge">تحدي الأبطال</span>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <button id="btn-sound-toggle" class="btn-icon" title="كتم / تفعيل الصوت"><i class="fa-solid fa-volume-high"></i></button>
+            <button id="btn-pause-timer" class="btn btn-secondary btn-sm"><i class="fa-solid fa-pause"></i> <span id="pause-btn-text">استراحة</span></button>
+            <button id="btn-end-match" class="btn btn-danger btn-sm">🏁 إنهاء اللعبة</button>
+        </div>
+    </header>
+
+    <div id="scoreboard-bar" class="scoreboard-bar"></div>
+
+    <main class="game-layout">
+        <!-- Turn Indicator Banner -->
+        <div class="turn-banner">
+            <div id="turn-banner-text" class="turn-banner-title">🎯 دور الفريق الأول!</div>
+            <div style="font-size: 0.9rem; font-weight: 700; color: #b45309;">💡 اضغط على الإجابة الصحيحة مباشرة لكسب النقاط!</div>
+        </div>
+
+        <div class="question-header">
+            <div class="question-meta-group">
+                <span id="q-counter" class="q-counter-badge">السؤال 1 من 10 🌟</span>
+                <span id="q-category" class="q-category-badge">📖 معاني الكلمات</span>
+                <span id="q-difficulty" class="q-diff-badge q-diff-medium">متوسط</span>
+                <span id="q-points" class="q-points-badge">⭐ 150 نقطة</span>
+                <span id="speed-bonus-badge" style="display: none; background: #fef3c7; border: 2px solid #f59e0b; color: #d97706; padding: 0.35rem 0.85rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 800;">
+                    ⚡ مكافأة السرعة متاحة!
+                </span>
+            </div>
+            <div class="timer-container">
+                <div id="timer-circle" class="timer-circle">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="circle-bg" cx="50" cy="50" r="42"></circle>
+                        <circle id="timer-progress" class="circle-progress" cx="50" cy="50" r="42" stroke-dasharray="263.89" stroke-dashoffset="0"></circle>
+                    </svg>
+                    <span id="timer-display" class="timer-text">30</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-stage-card">
+            <div id="question-text" class="question-text">Loading Question...</div>
+            <div id="question-subhint" class="question-subhint" style="display: none;"></div>
+        </div>
+
+        <div id="challenge-arena"></div>
+
+        <!-- Instant Kid-Friendly Feedback & Next Question Box -->
+        <div id="explanation-box" class="explanation-box">
+            <div class="explanation-header">
+                <span id="explanation-title">🎉 رائع!</span>
+                <button id="btn-next-question" class="btn btn-primary">
+                    <span>السؤال التالي ⏭️</span>
+                </button>
+            </div>
+            <div id="explanation-text" class="explanation-body"></div>
+        </div>
+
+        <!-- Simple Bottom Navigation for Kids -->
+        <div class="kids-action-bar">
+            <span style="font-weight: 800; color: #64748b; font-size: 0.95rem;">
+                🌟 يتبدل الدور تلقائياً بين الفرق في كل سؤال (أو اضغط على بطاقة الفريق لتغييره)
+            </span>
+            <button id="btn-skip-question" class="btn btn-secondary btn-sm">
+                تخطي للسؤال التالي ⏭️
+            </button>
+        </div>
+    </main>
+
+    <div id="modal-confirm-end" class="modal-overlay">
+        <div class="modal-content" style="max-width: 480px; text-align: center;">
+            <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">🏆</div>
+            <h2 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 0.75rem; color: #1e293b;">هل تريدون إنهاء اللعبة وإعلان البطل الآن؟</h2>
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+                <button id="btn-confirm-end-yes" class="btn btn-gold">نعم، احتفالية الفائزين! 🎉</button>
+                <button id="btn-confirm-end-no" class="btn btn-secondary">إكمال اللعب 🎮</button>
+            </div>
+        </div>
+    </div>
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/scoring.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/questions_data.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

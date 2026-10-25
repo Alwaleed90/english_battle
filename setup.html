@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تجهيز اللعبة | English Battle</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="top-nav">
+        <a href="index.html" class="nav-brand">
+            <div class="brand-icon">🚀</div>
+            <div>
+                <span class="brand-title font-en">ENGLISH BATTLE</span>
+                <span class="brand-badge">تجهيز التحدي 🎮</span>
+            </div>
+        </a>
+        <div class="nav-actions">
+            <a href="index.html" class="btn btn-secondary btn-sm">🏠 العودة للرئيسية</a>
+        </div>
+    </header>
+
+    <main class="main-container" style="max-width: 1020px;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h1 style="font-size: 2.3rem; font-weight: 900; margin-bottom: 0.4rem; color: #1e293b;">
+                جهزوا فرقكم لبدء <span class="text-cyan">المغامرة!</span> 🌟
+            </h1>
+            <p style="color: #475569; font-weight: 700; font-size: 1.15rem;">اختاروا أسماء فرقكم ومستوى التحديات وانطلقوا نحو الفوز!</p>
+        </div>
+
+        <form id="setup-form">
+            <div class="setup-section">
+                <div class="section-header">
+                    <h2 class="section-title">🎒 1. اختر المرحلة</h2>
+                </div>
+                <div class="radio-pills">
+                    <input type="radio" name="stage" id="stage-primary" value="primary" class="radio-pill-input" checked>
+                    <label for="stage-primary" class="radio-pill-label"><span>🌟 أبطال الابتدائي</span><span style="font-size: 0.85rem; color: #64748b;">كلمات وجمل سهلة وممتعة</span></label>
+                    <input type="radio" name="stage" id="stage-intermediate" value="intermediate" class="radio-pill-input">
+                    <label for="stage-intermediate" class="radio-pill-label"><span>🚀 أبطال المتوسط</span><span style="font-size: 0.85rem; color: #64748b;">تحديات متوسطة ومشوقة</span></label>
+                    <input type="radio" name="stage" id="stage-secondary" value="secondary" class="radio-pill-input">
+                    <label for="stage-secondary" class="radio-pill-label"><span>👑 المحترفون</span><span style="font-size: 0.85rem; color: #64748b;">تحديات متقدمة للأذكياء</span></label>
+                    <input type="radio" name="stage" id="stage-all" value="all" class="radio-pill-input">
+                    <label for="stage-all" class="radio-pill-label"><span>🌈 كوكتيل شامل</span><span style="font-size: 0.85rem; color: #64748b;">جميع المستويات معاً</span></label>
+                </div>
+            </div>
+
+            <div class="setup-section">
+                <div class="section-header">
+                    <h2 class="section-title">⭐ 2. مستوى الصعوبة</h2>
+                </div>
+                <div class="radio-pills">
+                    <input type="radio" name="difficulty" id="diff-all" value="all" class="radio-pill-input" checked>
+                    <label for="diff-all" class="radio-pill-label"><span>🎲 متنوع وممتع</span><span style="font-size: 0.8rem;">سهل + متوسط + بطل</span></label>
+                    <input type="radio" name="difficulty" id="diff-easy" value="easy" class="radio-pill-input">
+                    <label for="diff-easy" class="radio-pill-label"><span style="color: #059669;">😊 سهل (100 نقطة)</span></label>
+                    <input type="radio" name="difficulty" id="diff-medium" value="medium" class="radio-pill-input">
+                    <label for="diff-medium" class="radio-pill-label"><span style="color: #d97706;">🚀 متوسط (150 نقطة)</span></label>
+                    <input type="radio" name="difficulty" id="diff-hard" value="hard" class="radio-pill-input">
+                    <label for="diff-hard" class="radio-pill-label"><span style="color: #e11d48;">🔥 بطل خارق (200 نقطة)</span></label>
+                </div>
+            </div>
+
+            <div class="setup-section">
+                <div class="section-header">
+                    <h2 class="section-title">🦁 3. الفرق المتنافسة</h2>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <label for="team-count-select" style="font-size: 1rem; font-weight: 800;">عدد الفرق:</label>
+                        <select id="team-count-select" class="form-input" style="padding: 0.4rem 0.9rem; width: auto;">
+                            <option value="2" selected>فريقان (2)</option>
+                            <option value="3">3 فرق</option>
+                            <option value="4">4 فرق</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="teams-container" class="teams-grid"></div>
+            </div>
+
+            <div class="setup-section">
+                <div class="section-header">
+                    <h2 class="section-title">🎪 4. الألعاب والتحديات</h2>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" id="btn-select-all-cats" class="btn btn-secondary btn-sm">تحديد الكل</button>
+                        <button type="button" id="btn-deselect-all-cats" class="btn btn-secondary btn-sm">إلغاء الكل</button>
+                    </div>
+                </div>
+                <div class="categories-selection-grid">
+                    <label class="cat-check-card"><input type="checkbox" name="categories" value="word_meaning" class="cat-check-input" checked><div class="cat-info"><div class="cat-name" style="font-weight: 800;">📖 معاني الكلمات</div><div style="font-size: 0.8rem; color: #64748b;">Word Meaning</div></div></label>
+                    <label class="cat-check-card"><input type="checkbox" name="categories" value="sentence_meaning" class="cat-check-input" checked><div class="cat-info"><div class="cat-name" style="font-weight: 800;">💬 معاني الجمل</div><div style="font-size: 0.8rem; color: #64748b;">Sentence Meaning</div></div></label>
+                    <label class="cat-check-card"><input type="checkbox" name="categories" value="grammar" class="cat-check-input" checked><div class="cat-info"><div class="cat-name" style="font-weight: 800;">✨ تحدي القواعد</div><div style="font-size: 0.8rem; color: #64748b;">Grammar Challenge</div></div></label>
+                    <label class="cat-check-card"><input type="checkbox" name="categories" value="fill_blank" class="cat-check-input" checked><div class="cat-info"><div class="cat-name" style="font-weight: 800;">✏️ أكمل الفراغ</div><div style="font-size: 0.8rem; color: #64748b;">Fill in the Blank</div></div></label>
+                    <label class="cat-check-card"><input type="checkbox" name="categories" value="word_scramble" class="cat-check-input" checked><div class="cat-info"><div class="cat-name" style="font-weight: 800;">🔤 ترتيب الحروف</div><div style="font-size: 0.8rem; color: #64748b;">Word Scramble</div></div></label>
+                    <label class="cat-check-card"><input type="checkbox" name="categories" value="sentence_builder" class="cat-check-input" checked><div class="cat-info"><div class="cat-name" style="font-weight: 800;">🧩 بناء الجملة</div><div style="font-size: 0.8rem; color: #64748b;">Sentence Builder</div></div></label>
+                    <label class="cat-check-card"><input type="checkbox" name="categories" value="true_false" class="cat-check-input" checked><div class="cat-info"><div class="cat-name" style="font-weight: 800;">✅ صح أم خطأ</div><div style="font-size: 0.8rem; color: #64748b;">True or False</div></div></label>
+                    <label class="cat-check-card"><input type="checkbox" name="categories" value="guess_word" class="cat-check-input" checked><div class="cat-info"><div class="cat-name" style="font-weight: 800;">🕵️ خمن الكلمة</div><div style="font-size: 0.8rem; color: #64748b;">Guess the Word</div></div></label>
+                </div>
+            </div>
+
+            <div class="setup-section">
+                <div class="section-header">
+                    <h2 class="section-title">⏱️ 5. الوقت وعدد الجولات</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+                    <div class="form-group">
+                        <label for="question-count-select" class="form-label">عدد الأسئلة:</label>
+                        <select id="question-count-select" class="form-input">
+                            <option value="5">5 أسئلة (جولة سريعة)</option>
+                            <option value="10" selected>10 أسئلة (ممتازة)</option>
+                            <option value="15">15 سؤالاً</option>
+                            <option value="20">20 سؤالاً (تحدي كبير)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="time-duration-select" class="form-label">وقت التفكير لكل سؤال:</label>
+                        <select id="time-duration-select" class="form-input">
+                            <option value="15">15 ثانية ⚡</option>
+                            <option value="30" selected>30 ثانية ⏱️</option>
+                            <option value="45">45 ثانية 🐢</option>
+                            <option value="60">60 ثانية 🌟</option>
+                            <option value="0">بدون مؤقت (مفتوح) ♾️</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">مكافأة السرعة:</label>
+                        <label style="display: flex; align-items: center; gap: 0.6rem; cursor: pointer; padding-top: 0.5rem;">
+                            <input type="checkbox" id="speed-bonus-toggle" class="cat-check-input" checked>
+                            <span style="font-weight: 800; color: #d97706;">⚡ +20% نقاط إضافية للإجابة السريعة!</span>
+                        </label>
+                    </div>
+                </div>
+                <input type="hidden" id="pts-easy" value="100">
+                <input type="hidden" id="pts-medium" value="150">
+                <input type="hidden" id="pts-hard" value="200">
+            </div>
+
+            <div style="text-align: center; margin-top: 2.5rem; margin-bottom: 3rem;">
+                <button type="submit" id="btn-start-battle" class="btn btn-gold btn-lg" style="min-width: 320px; font-size: 1.5rem;">
+                    🚀 انطلاق التحدي الآن! 🎉
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/questions_data.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/setup.js"></script>
+</body>
+</html>
